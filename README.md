@@ -1,165 +1,210 @@
-# KAI – Kyle AI 🤖🧙‍♂️
+# KAI - Kyle's AI Assistant
 
-KAI is a fun, interactive AI chatbot that answers questions as if it were Kyle — a frontend wizard who turns coffee into code. It's a mobile-friendly web app built with Next.js 15, PrimeReact, and TailwindCSS.
+A Next.js 15 chatbot application featuring Kyle, a frontend engineer, built with modern web technologies and PrimeReact UI components.
 
----
+## 🚀 Features
 
-## 🚀 Tech Stack
-- **Next.js 15 (App Router)**
-- **TypeScript**
-- **TailwindCSS**
-- **PrimeReact**
-- **OpenAI Chat API (gpt-3.5-turbo)**
+- **AI Chatbot**: Powered by OpenAI API with Kyle's personality
+- **Modern UI**: Built with PrimeReact components and TailwindCSS
+- **Responsive Design**: Mobile-first approach with glassmorphism effects
+- **Theme Support**: Light/dark theme with custom styling
+- **Usage Limits**: Daily chat limit tracking via localStorage
+- **Streaming Responses**: Real-time chat experience
+- **Portfolio Integration**: Social links and professional information
 
----
+## 🛠️ Tech Stack
 
-## ✨ Features
-- Mobile-first chat interface
-- Streamed AI responses via `/api/chat`
-- Public profile knowledge:
-  - Citizenship, job skills, location, GitHub, projects
-  - College, stack, interests (without private info)
-- Usage-limited (10 questions per user per day)
-- Personality-aware prompt styling
-- Subtle animated background
-- Dark theme with PrimeReact Lara Dark Teal
+- **Framework**: Next.js 15.3.4 (App Router)
+- **Language**: TypeScript
+- **Styling**: TailwindCSS + PrimeReact + PrimeFlex
+- **UI Components**: PrimeReact
+- **Icons**: PrimeIcons + React Icons
+- **AI**: OpenAI Chat API
+- **Deployment**: Netlify
 
----
+## 📦 Installation
 
-## 🛡 Usage Limits
-Each visitor can ask up to **10 questions per day**. Limits are tracked via `localStorage` and reset every 24 hours.
+1. **Clone the repository**
 
----
+   ```bash
+   git clone <your-repo-url>
+   cd kai
+   ```
 
-## 🧠 How it Works
-- Sends prompt + user message to OpenAI API
-- Injects Kyle's profile from `/data/kyleProfile.ts`
-- Streams response back to chat UI
-- Responds in Kyle's tone with helpful info
+2. **Install dependencies**
 
----
+   ```bash
+   npm install
+   ```
 
-## 🛠 Installation & Setup
+3. **Set up environment variables**
+   Create a `.env.local` file in the root directory:
 
-### Prerequisites
-- Node.js 18+ 
-- npm or yarn
+   ```env
+   OPENAI_API_KEY=your_openai_api_key_here
+   ```
 
-### 1. Clone & Install
-```bash
-git clone <repository-url>
-cd kai
-npm install
-```
+4. **Run the development server**
 
-### 2. Environment Setup
-Create a `.env.local` file in the root directory:
-```bash
-OPENAI_API_KEY=your_openai_api_key_here
-```
+   ```bash
+   npm run dev
+   ```
 
-### 3. Run Development Server
-```bash
-npm run dev
-```
+5. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-Open [http://localhost:3000](http://localhost:3000) to view the app.
+## 🚀 Deployment to Netlify
 
----
+### Option 1: Deploy via Netlify UI
+
+1. **Push your code to GitHub**
+
+   ```bash
+   git add .
+   git commit -m "Initial commit"
+   git push origin main
+   ```
+
+2. **Connect to Netlify**
+
+   - Go to [netlify.com](https://netlify.com)
+   - Click "New site from Git"
+   - Connect your GitHub repository
+   - Select the repository
+
+3. **Configure build settings**
+
+   - Build command: `npm run build`
+   - Publish directory: `out`
+   - Node version: 18
+
+4. **Set environment variables**
+
+   - Go to Site settings > Environment variables
+   - Add `OPENAI_API_KEY` with your OpenAI API key
+
+5. **Deploy**
+   - Click "Deploy site"
+
+### Option 2: Deploy via Netlify CLI
+
+1. **Install Netlify CLI**
+
+   ```bash
+   npm install -g netlify-cli
+   ```
+
+2. **Build the project**
+
+   ```bash
+   npm run build
+   ```
+
+3. **Deploy**
+   ```bash
+   netlify deploy --prod --dir=out
+   ```
+
+## 🔧 Configuration
+
+### Environment Variables
+
+| Variable         | Description         | Required |
+| ---------------- | ------------------- | -------- |
+| `OPENAI_API_KEY` | Your OpenAI API key | Yes      |
+
+### Build Configuration
+
+The project is configured for static export with:
+
+- `output: 'export'` in `next.config.ts`
+- `trailingSlash: true` for Netlify compatibility
+- `images.unoptimized: true` for static export
 
 ## 📁 Project Structure
+
 ```
-src/
-├── app/
-│   ├── api/chat/route.ts    # OpenAI API integration
-│   ├── globals.css          # PrimeReact theme + custom styles
-│   ├── layout.tsx           # Root layout
-│   └── page.tsx             # Main chat page
-├── components/
-│   ├── AnimatedBackground.tsx  # Subtle animated background
-│   ├── Chat.tsx                # Main chat component
-│   ├── ChatInput.tsx           # Message input
-│   └── ChatMessage.tsx         # Individual message display
-├── data/
-│   └── kyleProfile.ts       # Kyle's personality & knowledge
-├── hooks/
-│   └── useUsageLimit.ts     # Daily usage limit management
-└── types/
-    └── chat.ts              # TypeScript interfaces
+kai/
+├── src/
+│   ├── app/                 # Next.js App Router
+│   │   ├── api/            # API routes
+│   │   ├── globals.css     # Global styles
+│   │   ├── layout.tsx      # Root layout
+│   │   └── page.tsx        # Home page
+│   ├── components/         # React components
+│   │   ├── Chat.tsx        # Main chat component
+│   │   ├── ChatInput.tsx   # Chat input component
+│   │   ├── ChatMessage.tsx # Individual message component
+│   │   ├── KaiThemeProvider.tsx # Theme provider
+│   │   ├── PortfolioHeader.tsx # Portfolio header
+│   │   ├── QuestionsLeft.tsx # Usage limit display
+│   │   └── WelcomeHero.tsx # Welcome section
+│   ├── constants/          # Constants and config
+│   ├── data/              # Static data
+│   ├── hooks/             # Custom React hooks
+│   └── types/             # TypeScript type definitions
+├── public/                # Static assets
+├── netlify.toml          # Netlify configuration
+├── next.config.ts        # Next.js configuration
+└── package.json          # Dependencies and scripts
 ```
 
----
+## 🎨 Customization
 
-## 🎨 UI Components
-- **PrimeReact**: InputText, Button components
-- **TailwindCSS**: Responsive design & styling
-- **Custom**: Chat bubbles, animated background
-- **Mobile-first**: Optimized for all screen sizes
+### Styling
 
----
+- Global styles are in `src/app/globals.css`
+- PrimeReact theme customization in `src/components/KaiThemeProvider.tsx`
+- Component-specific styles use TailwindCSS classes
 
-## 🔧 Development
+### Kyle's Profile
 
-### Build for Production
+- Update Kyle's information in `src/data/kyleProfile.ts`
+- Modify the AI personality prompt in the chat API route
+
+### Theme
+
+- Custom theme colors and styling in the theme provider
+- Dark/light mode support built-in
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+1. **Build fails on Netlify**
+
+   - Ensure Node.js version is 18 or higher
+   - Check that all environment variables are set
+   - Verify the build command is `npm run build`
+
+2. **OpenAI API errors**
+
+   - Verify your API key is correct
+   - Check your OpenAI account quota
+   - Ensure the API key is set in Netlify environment variables
+
+3. **Styling issues**
+   - Clear browser cache
+   - Check that PrimeReact CSS is properly imported
+   - Verify TailwindCSS configuration
+
+### Development Commands
+
 ```bash
-npm run build
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run start    # Start production server
+npm run lint     # Run ESLint
 ```
 
-### Run Production Build
-```bash
-npm start
-```
+## 📝 License
 
-### Lint & Type Check
-```bash
-npm run lint
-npm run type-check
-```
-
----
-
-## 🌟 Key Features Explained
-
-### Personality Injection
-The AI receives Kyle's profile data including:
-- Professional background (frontend engineer)
-- Location (Irvine, CA)
-- Skills & tech stack
-- Communication style
-- What can/cannot be shared
-
-### Usage Tracking
-- `localStorage` stores daily usage count
-- Resets automatically at midnight
-- Prevents abuse while allowing daily interaction
-
-### Streaming Responses
-- Real-time AI response streaming
-- Smooth typing animation
-- Better user experience
-
----
+This project is private and proprietary.
 
 ## 🤝 Contributing
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+
+This is a personal project for Kyle's portfolio. For questions or suggestions, please reach out directly.
 
 ---
 
-## 📄 License
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-## 🙏 Acknowledgments
-- Built with Next.js 15 and PrimeReact
-- Powered by OpenAI GPT-3.5 Turbo
-- Styled with TailwindCSS
-- Animated with CSS animations
-
----
-
-**KAI** - Where coffee meets code, and AI meets personality! ☕💻
+Built with ❤️ by Kyle using Next.js, PrimeReact, and OpenAI

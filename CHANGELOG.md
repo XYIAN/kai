@@ -2,6 +2,15 @@
 
 ## [Unreleased]
 
+### 🚀 Netlify Deployment Setup
+
+- **Static Export Configuration**: Updated Next.js config for static export with `output: 'export'`
+- **Netlify Configuration**: Added `netlify.toml` with proper build settings and redirects
+- **Build Optimization**: Configured for static hosting with `trailingSlash: true` and `images.unoptimized: true`
+- **Deployment Documentation**: Comprehensive README with Netlify deployment instructions
+- **Environment Variables**: Proper setup for OpenAI API key in Netlify environment
+- **Security Headers**: Added security headers for production deployment
+
 ### 🎨 Major UI Overhaul & Cleanup
 
 - **Complete CSS Rewrite**: Removed all conflicting styles and created specific, targeted CSS classes
