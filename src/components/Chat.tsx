@@ -62,39 +62,20 @@ export function Chat() {
 				}
 			}
 
-			const reader = response.body?.getReader()
-			if (!reader) {
-				throw new Error('No response body')
+			const data = await response.json()
+
+			if (!data.response) {
+				throw new Error('No response from AI')
 			}
 
 			const assistantMessage: ChatMessageType = {
 				id: (Date.now() + 1).toString(),
 				role: 'assistant',
-				content: '',
+				content: data.response,
 				timestamp: new Date(),
 			}
 
 			setMessages((prev) => [...prev, assistantMessage])
-
-			const decoder = new TextDecoder()
-			let fullContent = ''
-
-			while (true) {
-				const { done, value } = await reader.read()
-				if (done) break
-
-				const chunk = decoder.decode(value)
-				fullContent += chunk
-
-				setMessages((prev) =>
-					prev.map((msg) =>
-						msg.id === assistantMessage.id
-							? { ...msg, content: fullContent }
-							: msg
-					)
-				)
-			}
-
 			incrementUsage()
 		} catch (err) {
 			const errorMessage =

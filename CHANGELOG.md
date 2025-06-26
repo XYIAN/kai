@@ -2,6 +2,15 @@
 
 ## [Unreleased]
 
+### 🔧 Critical API Fix for Netlify Deployment
+
+- **Netlify Functions Implementation**: Replaced Next.js API routes with Netlify Functions for static hosting compatibility
+- **Chat API Migration**: Moved from `/api/chat` route to `netlify/functions/chat.js`
+- **Static Export Compatibility**: Fixed 404 errors by implementing serverless functions instead of server-side API routes
+- **CORS Support**: Added proper CORS headers for cross-origin requests
+- **Error Handling**: Improved error handling and response formatting for Netlify Functions
+- **Build Optimization**: Removed API routes from build output for cleaner static export
+
 ### 🚀 Netlify Deployment Setup
 
 - **Static Export Configuration**: Updated Next.js config for static export with `output: 'export'`

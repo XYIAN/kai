@@ -9,7 +9,7 @@ A Next.js 15 chatbot application featuring Kyle, a frontend engineer, built with
 - **Responsive Design**: Mobile-first approach with glassmorphism effects
 - **Theme Support**: Light/dark theme with custom styling
 - **Usage Limits**: Daily chat limit tracking via localStorage
-- **Streaming Responses**: Real-time chat experience
+- **Real-time Responses**: AI responses via Netlify Functions
 - **Portfolio Integration**: Social links and professional information
 
 ## 🛠️ Tech Stack
@@ -20,6 +20,7 @@ A Next.js 15 chatbot application featuring Kyle, a frontend engineer, built with
 - **UI Components**: PrimeReact
 - **Icons**: PrimeIcons + React Icons
 - **AI**: OpenAI Chat API
+- **Backend**: Netlify Functions
 - **Deployment**: Netlify
 
 ## 📦 Installation
@@ -61,7 +62,7 @@ A Next.js 15 chatbot application featuring Kyle, a frontend engineer, built with
 
    ```bash
    git add .
-   git commit -m "Initial commit"
+   git commit -m "Add Netlify Functions setup"
    git push origin main
    ```
 
@@ -121,13 +122,20 @@ The project is configured for static export with:
 - `trailingSlash: true` for Netlify compatibility
 - `images.unoptimized: true` for static export
 
+### Netlify Functions
+
+The chat API is implemented as a Netlify Function:
+
+- **Location**: `netlify/functions/chat.js`
+- **Endpoint**: `/api/chat` (automatically redirected to `/.netlify/functions/chat`)
+- **Features**: CORS support, error handling, Kyle's personality prompt
+
 ## 📁 Project Structure
 
 ```
 kai/
 ├── src/
 │   ├── app/                 # Next.js App Router
-│   │   ├── api/            # API routes
 │   │   ├── globals.css     # Global styles
 │   │   ├── layout.tsx      # Root layout
 │   │   └── page.tsx        # Home page
@@ -143,6 +151,9 @@ kai/
 │   ├── data/              # Static data
 │   ├── hooks/             # Custom React hooks
 │   └── types/             # TypeScript type definitions
+├── netlify/
+│   └── functions/         # Netlify Functions
+│       └── chat.js        # Chat API function
 ├── public/                # Static assets
 ├── netlify.toml          # Netlify configuration
 ├── next.config.ts        # Next.js configuration
@@ -160,7 +171,7 @@ kai/
 ### Kyle's Profile
 
 - Update Kyle's information in `src/data/kyleProfile.ts`
-- Modify the AI personality prompt in the chat API route
+- Modify the AI personality prompt in `netlify/functions/chat.js`
 
 ### Theme
 
@@ -183,7 +194,13 @@ kai/
    - Check your OpenAI account quota
    - Ensure the API key is set in Netlify environment variables
 
-3. **Styling issues**
+3. **Chat API 404 errors**
+
+   - Make sure Netlify Functions are properly configured
+   - Check that the `netlify.toml` file includes the functions directory
+   - Verify the API redirect rule is in place
+
+4. **Styling issues**
    - Clear browser cache
    - Check that PrimeReact CSS is properly imported
    - Verify TailwindCSS configuration
