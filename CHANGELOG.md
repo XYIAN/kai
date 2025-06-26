@@ -1,5 +1,187 @@
 # Changelog
 
+## [Unreleased]
+
+### 🎨 Major UI Overhaul & Cleanup
+
+- **Complete CSS Rewrite**: Removed all conflicting styles and created specific, targeted CSS classes
+- **Darker Theme**: Changed background from slate/purple to pure black/gray for a more sophisticated look
+- **Floating Effects**: Added proper floating animations with subtle rotation for a more dynamic feel
+- **Glassmorphism**: Implemented consistent glassmorphism effects throughout the interface
+- **Responsive Layout**: Fixed desktop layout issues - chat no longer snaps to bottom
+- **Specific Styling**: All CSS classes now target specific elements instead of global styles
+- **PrimeReact Integration**: Proper integration with PrimeReact theming system
+
+### 🧹 Cleanup & Maintenance
+
+- **Removed Unused Assets**: Deleted all Next.js setup files (file.svg, globe.svg, next.svg, vercel.svg, window.svg)
+- **CSS Conflicts**: Eliminated all conflicting CSS rules that were causing display issues
+- **Unused Styles**: Removed all unused CSS classes and global styles
+- **Header Fix**: Replaced random "K" with proper bolt icon in portfolio header
+- **Scrollbar**: Made scrollbar styling specific to chat container only
+
+### 🎯 UI Improvements
+
+- **Chat Container**: Now uses proper glassmorphism with rounded corners and shadows
+- **Input Styling**: Enhanced input field with better focus states and glassmorphism
+- **Button Effects**: Improved button hover effects with proper elevation
+- **Message Bubbles**: Better styling for chat messages with proper gradients and shadows
+- **Loading States**: Enhanced loading indicators with better animations
+- **Error Handling**: Improved error message styling with better contrast
+
+### 🔧 Technical Improvements
+
+- **CSS Variables**: Implemented custom CSS variables for consistent theming
+- **Animation Performance**: Optimized animations for better performance
+- **Mobile-First**: Ensured all improvements work well on mobile devices
+- **Accessibility**: Maintained proper contrast ratios and focus states
+
+### 🎨 Background Update
+
+- **KAI Background Image**: Updated background to use `kai-bg-1.png` from the public folder
+- **Image Optimization**: Added proper Next.js Image component with priority loading and quality optimization
+- **Overlay Enhancement**: Added black overlay (40% opacity) for better text readability over the background image
+- **Simplified Elements**: Removed unnecessary grid pattern and excessive floating elements
+- **Performance**: Optimized background loading with proper image attributes
+
+### 🐛 Critical Fixes
+
+- **Chat Message Visibility**: Fixed critical issue where chat messages were not displaying due to overcomplicated PrimeReact Message component styling
+- **Simplified Message Component**: Replaced complex PrimeReact Message overrides with simple, custom div-based chat bubbles
+- **KAI Logo Integration**: Added KAI logo (kai-logo-4.png) for AI messages and avatars throughout the interface
+- **Input Container Fix**: Fixed chat input to properly fill parent container width
+- **Reduced Wobbling**: Made floating animation much more subtle (4px instead of 12px) and removed from main chat container
+
+### 🎨 UI Improvements
+
+- **Custom Chat Bubbles**: Created simple, effective chat message bubbles with proper text visibility
+- **Loading States**: Simplified loading indicators to use custom styling instead of PrimeReact Message
+- **Error Messages**: Streamlined error message display with better visibility
+- **Avatar System**: Implemented proper avatar system with KAI logo for AI and user icon for user messages
+- **Responsive Input**: Fixed input field to properly expand and fill available space
+
+### 🔧 Technical Improvements
+
+- **Removed CSS Conflicts**: Eliminated all PrimeReact Message component CSS overrides that were causing display issues
+- **Simplified Styling**: Used direct Tailwind classes instead of complex CSS overrides
+- **Better Component Structure**: Improved component hierarchy and styling approach
+- **Image Optimization**: Added proper Next.js Image component usage for KAI logos
+
+### 🎯 Visual Enhancements
+
+- **KAI Branding**: Integrated KAI logo throughout the interface for consistent branding
+- **Message Layout**: Improved message layout with proper spacing and visual hierarchy
+- **Input Styling**: Enhanced input field with better padding and visual feedback
+- **Subtle Animations**: Reduced animation intensity for better user experience
+
+### 🎯 QuestionsLeft Component Extraction
+
+- **New Component**: Created dedicated `QuestionsLeft` component with proper TypeScript interface
+- **Better Styling**: Improved spacing using PrimeFlex classes (`gap-2`, `align-items-center`)
+- **Enhanced Padding**: Increased horizontal padding (`px-6`) for better visual balance
+- **Subtle Positioning**: Moved to bottom of chat container with 50% opacity for subtlety
+- **Clean Architecture**: Extracted reusable component with single responsibility
+
+### 🧹 Major CSS Cleanup & PrimeReact Integration
+
+- **Removed All Leftover Next.js Styles**: Completely cleaned up global CSS, removing all leftover styles from npx setup
+- **Background Fix**: Removed body background override that was preventing the KAI background image from showing
+- **PrimeReact Component Integration**: Now using proper PrimeReact components (Card, Button, InputText) throughout
+- **Removed Hard-Coded Borders**: Eliminated all hard-coded border colors and styles, letting PrimeReact theme handle styling
+- **Subtle Styling**: Reduced border contrast and made all corners slightly rounded (rounded-lg instead of rounded-2xl)
+- **Less Boxy Design**: Replaced harsh borders and shadows with subtle, elegant styling
+
+### 🎨 UI Refinements
+
+- **Chat Container**: Now uses PrimeReact Card component with subtle rounded corners
+- **Input Container**: Uses PrimeReact Card with proper theming
+- **Message Bubbles**: Simplified styling with subtle backgrounds and rounded corners
+- **Loading States**: Cleaner loading indicators with reduced opacity
+- **Error Messages**: Streamlined error display without harsh borders
+- **Usage Counter**: Simplified styling with subtle background
+
+### 🔧 Technical Improvements
+
+- **CSS Architecture**: Removed all custom CSS variables and complex overrides
+- **PrimeReact Theming**: Let PrimeReact handle all component styling and theming
+- **Performance**: Reduced CSS complexity for better performance
+- **Maintainability**: Much cleaner codebase with fewer custom styles
+
+### 🎯 Visual Enhancements
+
+- **Consistent Theming**: All components now follow PrimeReact's Lara Dark Teal theme
+- **Subtle Effects**: Reduced visual noise with softer shadows and backgrounds
+- **Better Contrast**: Improved readability while maintaining elegant design
+- **Professional Look**: More polished and professional appearance
+
+## [0.1.0] - 2024-12-19
+
+### ✨ Initial Release
+
+- **Next.js 15 App**: Built with Next.js 15 App Router and TypeScript
+- **Kyle AI Chatbot**: AI-powered chatbot that responds as Kyle, a frontend engineer
+- **OpenAI Integration**: Streaming chat responses using OpenAI GPT-3.5-turbo
+- **PrimeReact UI**: Modern UI components with PrimeReact and TailwindCSS
+- **Responsive Design**: Mobile-first responsive design with glassmorphism effects
+- **Usage Limits**: Daily usage tracking with localStorage (10 questions per day)
+- **Theme Support**: Dark theme with animated background
+- **Portfolio Header**: Professional header with social links and branding
+
+### 🎨 UI Features
+
+- **Animated Background**: Subtle animated background with floating elements
+- **Chat Interface**: Scrollable chat thread with user/AI message bubbles
+- **Input System**: Real-time chat input with send button and keyboard shortcuts
+- **Loading States**: Animated loading indicators during AI responses
+- **Error Handling**: Comprehensive error handling for API failures
+- **Usage Counter**: Visual indicator of remaining daily questions
+
+### 🔧 Technical Features
+
+- **TypeScript**: Full TypeScript implementation with proper type definitions
+- **API Routes**: Next.js API routes for chat functionality
+- **Streaming**: Real-time streaming of AI responses
+- **State Management**: React hooks for chat state and usage limits
+- **Error Boundaries**: Proper error handling and user feedback
+- **Performance**: Optimized for fast loading and smooth interactions
+
+### 📱 Responsive Design
+
+- **Mobile-First**: Designed primarily for mobile devices
+- **Desktop Support**: Full desktop experience with proper scaling
+- **Touch-Friendly**: Optimized for touch interactions
+- **Accessibility**: Proper ARIA labels and keyboard navigation
+
+### 🎯 Kyle's Personality
+
+- **Professional Background**: Frontend engineer from Irvine, CA
+- **Technical Expertise**: React, Next.js, TypeScript, and modern web technologies
+- **Personal Touch**: Includes family background, interests, and fun facts
+- **Work Experience**: Current role at XYIAN Software and previous positions
+- **Skills & Tools**: Comprehensive list of technical skills and tools
+- **Contact Information**: Professional contact details and social links
+
+## [0.4.0] - 2024-06-25
+
+### Added
+
+- **PrimeReact Integration**: Refactored chat components to use PrimeReact Message component
+- **Custom Theme Provider**: Created KaiThemeProvider with JSDoc documentation for theme management
+- **Custom CSS Classes**: Added kai-user-message and kai-ai-message classes for consistent styling
+
+### Changed
+
+- **ChatMessage Component**: Now uses PrimeReact Message component with custom theming
+- **Loading States**: Improved loading and error states using PrimeReact Message components
+- **Code Organization**: Added proper JSDoc documentation for all custom components
+- **Theme Management**: Centralized theme customizations in global CSS with proper class naming
+
+### Fixed
+
+- **Spacing Issues**: Resolved uneven spacing and boxy appearance in chat messages
+- **Component Consistency**: All chat elements now use PrimeReact components with custom theming
+- **Code Maintainability**: Better organization with documented custom theme components
+
 ## [0.3.0] - 2024-06-25
 
 ### Added
@@ -65,19 +247,3 @@
 - Fixed Next.js viewport warning by moving viewport to its own export in layout.tsx
 - Updated metadata: name is now 'KAI', description is 'The KyleAI chatbot'
 - Added .prettierrc with project formatting rules
-
-## [0.1.0] - 2024-06-25
-
-### Added
-
-- Initial implementation of KAI (Kyle AI) chatbot web app
-  - Next.js 15 App Router, TypeScript, TailwindCSS, PrimeReact, OpenAI API
-  - Mobile-first chat UI with animated background, PrimeReact components, and daily usage limit (tracked in localStorage)
-  - Kyle's personality injected from `data/kyleProfile.ts` for every chat
-  - Streaming OpenAI responses via `/api/chat`
-  - Light/dark support via PrimeReact Lara Dark Teal theme
-  - Comprehensive README and environment setup
-
-### Changed
-
-- **Project structure flattened:** Removed nested `kai/` directory, moved all files to the root for a clean, standard Next.js project layout.
