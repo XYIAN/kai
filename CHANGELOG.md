@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.3.0] - 2024-06-25
+
+### Added
+
+- **Comprehensive Personal Profile**: Added extensive personal information to make KAI more authentic
+  - Personal background: Monterey, CA upbringing, ranch life, construction and drone experience
+  - Family details: Dad "Airdog" and sister Kas (holistic health doctor with website link)
+  - Complete work history: XYIAN Software, Yamaha, Bluon Inc, and previous positions
+  - Technical skills: Comprehensive list of 40+ technologies and tools
+  - Fun facts: Soccer career, fitness interests, dog Nala, personal stories
+  - Contact information: Phone, email, website, LinkedIn, GitHub
+
+### Changed
+
+- **Enhanced AI Personality**: Updated prompt to include personal stories and authentic responses
+- **Portfolio Header**: Added personal website link (kyledilbeck.com) alongside LinkedIn and GitHub
+- **Professional Title**: Updated from "Frontend Engineer" to "Senior Software Developer"
+- **Authentic Responses**: AI now shares relevant personal details and stories when appropriate
+
+### Fixed
+
+- **Personalization**: KAI now feels like talking to the real Kyle with authentic personality and experiences
+
 ## [0.2.0] - 2024-06-25
 
 ### Added
