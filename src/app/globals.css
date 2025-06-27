@@ -86,3 +86,50 @@ body {
 		background-position: 100% 50%;
 	}
 }
+
+@keyframes kai-bounce {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(-10px);
+	}
+}
+
+.kai-bounce {
+	animation: kai-bounce 0.7s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom dialog styling for KAI */
+.kai-limit-dialog .p-dialog {
+	background: rgba(15, 23, 42, 0.95);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 1rem;
+}
+
+.kai-limit-dialog .p-dialog-header {
+	background: transparent;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	padding: 1.5rem;
+}
+
+.kai-limit-dialog .p-dialog-content {
+	background: transparent;
+	padding: 1.5rem;
+}
+
+.kai-limit-dialog .p-dialog-footer {
+	background: transparent;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	padding: 1.5rem;
+}
+
+.kai-limit-dialog .p-dialog-header-icon {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.kai-limit-dialog .p-dialog-header-icon:hover {
+	color: white;
+	background: rgba(255, 255, 255, 0.1);
+}

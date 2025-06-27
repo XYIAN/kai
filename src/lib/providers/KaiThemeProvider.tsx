@@ -11,7 +11,7 @@ interface KaiThemeProviderProps {
  *
  * @description
  * Provides custom theme overrides for PrimeReact components used in the KAI chatbot.
- * This component applies glassmorphism styling and custom color schemes to maintain
+ * This provider applies glassmorphism styling and custom color schemes to maintain
  * consistency across the application.
  *
  * @component

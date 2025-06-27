@@ -143,10 +143,17 @@ kai/
 │   │   ├── Chat.tsx        # Main chat component
 │   │   ├── ChatInput.tsx   # Chat input component
 │   │   ├── ChatMessage.tsx # Individual message component
-│   │   ├── KaiThemeProvider.tsx # Theme provider
 │   │   ├── PortfolioHeader.tsx # Portfolio header
 │   │   ├── QuestionsLeft.tsx # Usage limit display
 │   │   └── WelcomeHero.tsx # Welcome section
+│   ├── lib/                # Library code and utilities
+│   │   └── providers/      # Application providers
+│   │       ├── AppProvider.tsx      # Main provider composition
+│   │       ├── PrimeReactProvider.tsx # PrimeReact provider
+│   │       ├── KaiThemeProvider.tsx # Custom theme provider
+│   │       └── index.ts    # Provider exports
+│   ├── utils/              # Utility functions
+│   │   └── errorMessages.ts # Error handling utilities
 │   ├── constants/          # Constants and config
 │   ├── data/              # Static data
 │   ├── hooks/             # Custom React hooks

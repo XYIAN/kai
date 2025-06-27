@@ -29,7 +29,11 @@ export function ChatMessage({ message }: ChatMessageProps) {
 	const isUser = message.role === 'user'
 
 	return (
-		<div className={`flex ${isUser ? 'justify-end' : 'justify-start'} mb-4`}>
+		<div
+			className={`flex ${
+				isUser ? 'justify-end' : 'justify-start'
+			} mb-4 align-items-center`}
+		>
 			<div className={`max-w-[80%] ${isUser ? 'order-2' : 'order-1'}`}>
 				<div
 					className={`
@@ -38,14 +42,15 @@ export function ChatMessage({ message }: ChatMessageProps) {
 					`}
 				>
 					{!isUser && (
-						<div className="flex items-center gap-2 mb-2">
-							<div className="w-6 h-6 rounded-full overflow-hidden flex-shrink-0">
+						<div className="flex items-center gap-2 mb-2 align-items-center">
+							<div className="w-[25px] h-[25px] rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
 								<Image
 									src="/kai-logo-4.png"
 									alt="KAI Logo"
-									width={24}
-									height={24}
+									width={25}
+									height={25}
 									className="w-full h-full object-cover"
+									style={{ borderRadius: '10px' }}
 								/>
 							</div>
 							<span className="text-xs text-white/70 font-medium">Kyle AI</span>
@@ -59,19 +64,19 @@ export function ChatMessage({ message }: ChatMessageProps) {
 
 			{/* Avatar */}
 			<div
-				className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mx-2 ${
+				className={`w-[50px] h-[50px] sm:w-[40px] sm:h-[40px] rounded-full flex items-center justify-center flex-shrink-0 mx-2 ${
 					isUser ? 'order-1 bg-white/10' : 'order-2'
 				}`}
 			>
 				{isUser ? (
-					<i className="pi pi-user text-white text-sm"></i>
+					<i className="pi pi-user text-white text-xl"></i>
 				) : (
 					<Image
-						src="/kai-logo-4.png"
+						src="/kai-logo-2.png"
 						alt="KAI Logo"
-						width={32}
-						height={32}
-						className="w-full h-full object-cover rounded-full"
+						width={40}
+						height={40}
+						className="w-full h-full object-contain"
 					/>
 				)}
 			</div>

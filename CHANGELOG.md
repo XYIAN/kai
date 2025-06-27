@@ -2,6 +2,44 @@
 
 ## [Unreleased]
 
+### 🔧 API Endpoint Fix for Development & Production
+
+- **Environment Detection**: Created smart API utility that detects localhost vs production environment
+- **Dual API Support**: Added support for both Next.js API routes (development) and Netlify Functions (production)
+- **API Utility**: Created `src/utils/api.ts` with `sendChatMessage` function for centralized API calls
+- **Browser Detection**: Uses `window.location.hostname` to determine correct API endpoint
+- **Development**: Uses `/api/chat` on localhost for Next.js dev server
+- **Production**: Uses `/.netlify/functions/chat` on Netlify for serverless functions
+- **Debugging**: Added console logging to track which API endpoint is being used
+- **Chat Component**: Updated to use new API utility instead of hardcoded fetch calls
+
+### 🏗️ Provider Architecture Reorganization
+
+- **Provider Directory Structure**: Moved all providers to `src/lib/providers/` for better organization
+- **Main AppProvider**: Created centralized `AppProvider` that composes all individual providers
+- **Provider Composition**: Implemented proper provider hierarchy with correct nesting order
+- **Clean Architecture**: Separated providers from components for better code organization
+- **Provider Structure**:
+  - `AppProvider.tsx` - Main provider that composes all others
+  - `PrimeReactProvider.tsx` - Base UI library provider
+  - `KaiThemeProvider.tsx` - Custom theme provider
+  - `index.ts` - Centralized exports
+- **Layout Update**: Root layout now uses single `AppProvider` instead of individual providers
+- **Component Cleanup**: Removed provider imports from individual components
+
+### 🎭 Themed Error Messages & Enhanced Logging
+
+- **Wizard-Themed Error Messages**: Replaced technical error messages with fun, magic-themed messages for better UX
+- **Error Message Utility**: Created `src/utils/errorMessages.ts` with comprehensive error mapping and themed messages
+- **Enhanced Error Logging**: Added detailed console logging with timestamps, context, and full error details
+- **Netlify Function Logging**: Improved server-side logging with structured error information and request tracking
+- **Error Message Examples**:
+  - "🧙‍♂️ The wizard's spell fizzled!" (generic errors)
+  - "💰 The wizard ran out of magical coins!" (quota exceeded)
+  - "🌐 The magical network is having a moment!" (network errors)
+  - "🔮 The AI crystal ball is malfunctioning!" (OpenAI errors)
+- **Better Error Styling**: Enhanced error message display with themed styling and better visual hierarchy
+
 ### 🔧 Critical API Fix for Netlify Deployment
 
 - **Netlify Functions Implementation**: Replaced Next.js API routes with Netlify Functions for static hosting compatibility
@@ -265,3 +303,15 @@
 - Fixed Next.js viewport warning by moving viewport to its own export in layout.tsx
 - Updated metadata: name is now 'KAI', description is 'The KyleAI chatbot'
 - Added .prettierrc with project formatting rules
+
+## [1.1.0] - 2024-06-25
+
+### 🎨 Avatar & Chat Icon Improvements
+
+- **Avatar Sizing**: Updated all chat avatars for a more balanced, professional look
+  - Small "Kyle AI" icon is now 25x25px
+  - Main chat icon (edge of bubble) is now 50x50px (scales to 40x40 on small screens)
+- **Icon Update**: Main chat icon for KAI AI now uses `public/kai-logo-2.png` for a more distinct look
+- **Responsive**: Avatar sizes scale down on mobile for better usability
+- **Consistent UI**: All avatar and icon sizes are now consistent across chat, loading, and message states
+- **Version Bump**: Updated app version to 1.1.0
