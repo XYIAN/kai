@@ -2,6 +2,7 @@
 
 import { Chat } from '@/components/Chat'
 import { PortfolioHeader } from '@/components/PortfolioHeader'
+import { Footer } from '@/components/Footer'
 import { Panel } from 'primereact/panel'
 
 export default function Home() {
@@ -18,6 +19,9 @@ export default function Home() {
 					<Chat />
 				</Panel>
 			</div>
+
+			{/* Footer with GitHub link */}
+			<Footer />
 		</main>
 	)
 }

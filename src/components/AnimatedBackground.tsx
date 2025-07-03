@@ -8,7 +8,7 @@ export function AnimatedBackground() {
 			{/* KAI Background Image */}
 			<div className="absolute inset-0">
 				<Image
-					src="/kai-bg-1.png"
+					src="/kai-bg-main.png"
 					alt="KAI Background"
 					fill
 					className="object-cover object-center"

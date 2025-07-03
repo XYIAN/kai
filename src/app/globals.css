@@ -22,7 +22,7 @@
 /* Background setup for parallax effect */
 html,
 body {
-	background-image: url('/kai-bg-1.png');
+	background-image: url('/kai-bg-main.png');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
