@@ -4,13 +4,16 @@ A Next.js 15 chatbot application featuring Kyle, a frontend engineer, built with
 
 ## 🚀 Features
 
-- **AI Chatbot**: Powered by OpenAI API with Kyle's personality
+- **AI Chatbot**: Powered by OpenAI API with KAI's personality (Kyle's AI Assistant)
+- **Personal Information**: KAI knows everything about Kyle including family background, work experience, and personality
 - **Modern UI**: Built with PrimeReact components and TailwindCSS
 - **Responsive Design**: Mobile-first approach with glassmorphism effects
-- **Theme Support**: Light/dark theme with custom styling
-- **Usage Limits**: Daily chat limit tracking via localStorage
+- **Theme Support**: Dark theme with custom styling and animated background
+- **Usage Limits**: Daily chat limit tracking via localStorage with "one more" feature
 - **Real-time Responses**: AI responses via Netlify Functions
 - **Portfolio Integration**: Social links and professional information
+- **Sound Effects**: Audio feedback for sending messages, receiving responses, and errors
+- **GitHub Footer**: Direct link to Kyle's GitHub profile
 
 ## 🛠️ Tech Stack
 
@@ -177,8 +180,13 @@ kai/
 
 ### Kyle's Profile
 
-- Update Kyle's information in `src/data/kyleProfile.ts`
-- Modify the AI personality prompt in `netlify/functions/chat.js`
+- KAI contains comprehensive information about Kyle including:
+  - Personal background and family information
+  - Work experience at XYIAN Software
+  - Technical skills and favorite tech stack (Next.js, TypeScript, Node.js, Expo)
+  - Personality traits and work ethic
+  - Contact information (GitHub, LinkedIn, Website)
+- Modify the AI personality prompt in `netlify/functions/chat.js` and `src/app/api/chat/route.ts`
 
 ### Theme
 

@@ -1,6 +1,38 @@
 # Changelog
 
-## [Unreleased]
+## [1.2.0] - 2024-12-19
+
+### 🎭 KAI Personality & Personal Information Update
+
+- **Complete Personality Overhaul**: Updated KAI to properly identify as an AI assistant created to help Kyle
+- **Personal Information Integration**: Added comprehensive personal details about Kyle including family background
+- **Dad's Information**: Added specific response about Kyle's dad: "The man, the myth, the legend, Airdog - he's probably working hard or partying even harder"
+- **Contact Information**: Integrated all social links (GitHub: github.com/xyian, LinkedIn: linkedin.com/in/kxdilbeck, Website: kyledilbeck.com)
+- **Personality Traits**: Added detailed personality information including work ethic, curiosity, and learning style
+- **Tech Stack Details**: Updated with favorite technologies (Next.js, TypeScript, Node.js, Expo for mobile)
+- **Professional Boundaries**: Added response for inappropriate questions: "Although I know everything about Kyle, this website is for professional and behavioral questions only"
+- **Location Information**: Confirmed Irvine, CA location and US citizenship for recruiter questions
+- **API Updates**: Updated both Netlify function and local development API route with consistent personality data
+
+### 🎨 Background Image Fix
+
+- **Aspect Ratio Fix**: Changed background from `contain` to `cover` to ensure full viewport coverage
+- **No More Gaps**: Background now properly covers the entire x-axis without leaving edges exposed
+- **Maintained Quality**: Background maintains proper scaling while ensuring full screen coverage
+
+### 🦶 GitHub Footer Addition
+
+- **New Footer Component**: Created `Footer` component with GitHub link
+- **GitHub Integration**: Added link to github.com/xyian with proper styling
+- **Positioning**: Fixed positioning at bottom center of the page
+- **PrimeReact Styling**: Uses PrimeReact Button with GitHub icon and glassmorphism effects
+- **Responsive Design**: Footer adapts to different screen sizes
+
+### 🔧 Linter Fixes
+
+- **ES Module Syntax**: Fixed Netlify function to use ES module `import` syntax instead of `require()`
+- **Unused Parameter**: Removed unused `context` parameter from Netlify function handler
+- **Build Verification**: Confirmed all linter errors resolved and build passes successfully
 
 ### 🔧 API Endpoint Fix for Development & Production
 
