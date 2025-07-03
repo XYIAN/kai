@@ -202,6 +202,208 @@
 - **Better Contrast**: Improved readability while maintaining elegant design
 - **Professional Look**: More polished and professional appearance
 
+## [1.1.0] - 2024-12-19
+
+### 🎭 KAI Personality & Personal Information Update
+
+- **Complete Personality Overhaul**: Updated KAI to properly identify as an AI assistant created to help Kyle
+- **Personal Information Integration**: Added comprehensive personal details about Kyle including family background
+- **Dad's Information**: Added specific response about Kyle's dad: "The man, the myth, the legend, Airdog - he's probably working hard or partying even harder"
+- **Contact Information**: Integrated all social links (GitHub: github.com/xyian, LinkedIn: linkedin.com/in/kxdilbeck, Website: kyledilbeck.com)
+- **Personality Traits**: Added detailed personality information including work ethic, curiosity, and learning style
+- **Tech Stack Details**: Updated with favorite technologies (Next.js, TypeScript, Node.js, Expo for mobile)
+- **Professional Boundaries**: Added response for inappropriate questions: "Although I know everything about Kyle, this website is for professional and behavioral questions only"
+- **Location Information**: Confirmed Irvine, CA location and US citizenship for recruiter questions
+- **API Updates**: Updated both Netlify function and local development API route with consistent personality data
+
+### 🎨 Background Image Fix
+
+- **Aspect Ratio Fix**: Changed background from `contain` to `cover` to ensure full viewport coverage
+- **No More Gaps**: Background now properly covers the entire x-axis without leaving edges exposed
+- **Maintained Quality**: Background maintains proper scaling while ensuring full screen coverage
+
+### 🦶 GitHub Footer Addition
+
+- **New Footer Component**: Created `Footer` component with GitHub link
+- **GitHub Integration**: Added link to github.com/xyian with proper styling
+- **Positioning**: Fixed positioning at bottom center of the page
+- **PrimeReact Styling**: Uses PrimeReact Button with GitHub icon and glassmorphism effects
+- **Responsive Design**: Footer adapts to different screen sizes
+
+### 🔧 Linter Fixes
+
+- **ES Module Syntax**: Fixed Netlify function to use ES module `import` syntax instead of `require()`
+- **Unused Parameter**: Removed unused `context` parameter from Netlify function handler
+- **Build Verification**: Confirmed all linter errors resolved and build passes successfully
+
+### 🔧 API Endpoint Fix for Development & Production
+
+- **Environment Detection**: Created smart API utility that detects localhost vs production environment
+- **Dual API Support**: Added support for both Next.js API routes (development) and Netlify Functions (production)
+- **API Utility**: Created `src/utils/api.ts` with `sendChatMessage` function for centralized API calls
+- **Browser Detection**: Uses `window.location.hostname` to determine correct API endpoint
+- **Development**: Uses `/api/chat` on localhost for Next.js dev server
+- **Production**: Uses `/.netlify/functions/chat` on Netlify for serverless functions
+- **Debugging**: Added console logging to track which API endpoint is being used
+- **Chat Component**: Updated to use new API utility instead of hardcoded fetch calls
+
+### 🏗️ Provider Architecture Reorganization
+
+- **Provider Directory Structure**: Moved all providers to `src/lib/providers/` for better organization
+- **Main AppProvider**: Created centralized `AppProvider` that composes all individual providers
+- **Provider Composition**: Implemented proper provider hierarchy with correct nesting order
+- **Clean Architecture**: Separated providers from components for better code organization
+- **Provider Structure**:
+  - `AppProvider.tsx` - Main provider that composes all others
+  - `PrimeReactProvider.tsx` - Base UI library provider
+  - `KaiThemeProvider.tsx` - Custom theme provider
+  - `index.ts` - Centralized exports
+- **Layout Update**: Root layout now uses single `AppProvider` instead of individual providers
+- **Component Cleanup**: Removed provider imports from individual components
+
+### 🎭 Themed Error Messages & Enhanced Logging
+
+- **Wizard-Themed Error Messages**: Replaced technical error messages with fun, magic-themed messages for better UX
+- **Error Message Utility**: Created `src/utils/errorMessages.ts` with comprehensive error mapping and themed messages
+- **Enhanced Error Logging**: Added detailed console logging with timestamps, context, and full error details
+- **Netlify Function Logging**: Improved server-side logging with structured error information and request tracking
+- **Error Message Examples**:
+  - "🧙‍♂️ The wizard's spell fizzled!" (generic errors)
+  - "💰 The wizard ran out of magical coins!" (quota exceeded)
+  - "🌐 The magical network is having a moment!" (network errors)
+  - "🔮 The AI crystal ball is malfunctioning!" (OpenAI errors)
+- **Better Error Styling**: Enhanced error message display with themed styling and better visual hierarchy
+
+### 🔧 Critical API Fix for Netlify Deployment
+
+- **Netlify Functions Implementation**: Replaced Next.js API routes with Netlify Functions for static hosting compatibility
+- **Chat API Migration**: Moved from `/api/chat` route to `netlify/functions/chat.js`
+- **Static Export Compatibility**: Fixed 404 errors by implementing serverless functions instead of server-side API routes
+- **CORS Support**: Added proper CORS headers for cross-origin requests
+- **Error Handling**: Improved error handling and response formatting for Netlify Functions
+- **Build Optimization**: Removed API routes from build output for cleaner static export
+
+### 🚀 Netlify Deployment Setup
+
+- **Static Export Configuration**: Updated Next.js config for static export with `output: 'export'`
+- **Netlify Configuration**: Added `netlify.toml` with proper build settings and redirects
+- **Build Optimization**: Configured for static hosting with `trailingSlash: true` and `images.unoptimized: true`
+- **Deployment Documentation**: Comprehensive README with Netlify deployment instructions
+- **Environment Variables**: Proper setup for OpenAI API key in Netlify environment
+- **Security Headers**: Added security headers for production deployment
+
+### 🎨 Major UI Overhaul & Cleanup
+
+- **Complete CSS Rewrite**: Removed all conflicting styles and created specific, targeted CSS classes
+- **Darker Theme**: Changed background from slate/purple to pure black/gray for a more sophisticated look
+- **Floating Effects**: Added proper floating animations with subtle rotation for a more dynamic feel
+- **Glassmorphism**: Implemented consistent glassmorphism effects throughout the interface
+- **Responsive Layout**: Fixed desktop layout issues - chat no longer snaps to bottom
+- **Specific Styling**: All CSS classes now target specific elements instead of global styles
+- **PrimeReact Integration**: Proper integration with PrimeReact theming system
+
+### 🧹 Cleanup & Maintenance
+
+- **Removed Unused Assets**: Deleted all Next.js setup files (file.svg, globe.svg, next.svg, vercel.svg, window.svg)
+- **CSS Conflicts**: Eliminated all conflicting CSS rules that were causing display issues
+- **Unused Styles**: Removed all unused CSS classes and global styles
+- **Header Fix**: Replaced random "K" with proper bolt icon in portfolio header
+- **Scrollbar**: Made scrollbar styling specific to chat container only
+
+### 🎯 UI Improvements
+
+- **Chat Container**: Now uses proper glassmorphism with rounded corners and shadows
+- **Input Styling**: Enhanced input field with better focus states and glassmorphism
+- **Button Effects**: Improved button hover effects with proper elevation
+- **Message Bubbles**: Better styling for chat messages with proper gradients and shadows
+- **Loading States**: Enhanced loading indicators with better animations
+- **Error Handling**: Improved error message styling with better contrast
+
+### 🔧 Technical Improvements
+
+- **CSS Variables**: Implemented custom CSS variables for consistent theming
+- **Animation Performance**: Optimized animations for better performance
+- **Mobile-First**: Ensured all improvements work well on mobile devices
+- **Accessibility**: Maintained proper contrast ratios and focus states
+
+### 🎨 Background Update
+
+- **KAI Background Image**: Updated background to use `kai-bg-1.png` from the public folder
+- **Image Optimization**: Added proper Next.js Image component with priority loading and quality optimization
+- **Overlay Enhancement**: Added black overlay (40% opacity) for better text readability over the background image
+- **Simplified Elements**: Removed unnecessary grid pattern and excessive floating elements
+- **Performance**: Optimized background loading with proper image attributes
+
+### 🐛 Critical Fixes
+
+- **Chat Message Visibility**: Fixed critical issue where chat messages were not displaying due to overcomplicated PrimeReact Message component styling
+- **Simplified Message Component**: Replaced complex PrimeReact Message overrides with simple, custom div-based chat bubbles
+- **KAI Logo Integration**: Added KAI logo (kai-logo-4.png) for AI messages and avatars throughout the interface
+- **Input Container Fix**: Fixed chat input to properly fill parent container width
+- **Reduced Wobbling**: Made floating animation much more subtle (4px instead of 12px) and removed from main chat container
+
+### 🎨 UI Improvements
+
+- **Custom Chat Bubbles**: Created simple, effective chat message bubbles with proper text visibility
+- **Loading States**: Simplified loading indicators to use custom styling instead of PrimeReact Message
+- **Error Messages**: Streamlined error message display with better visibility
+- **Avatar System**: Implemented proper avatar system with KAI logo for AI and user icon for user messages
+- **Responsive Input**: Fixed input field to properly expand and fill available space
+
+### 🔧 Technical Improvements
+
+- **Removed CSS Conflicts**: Eliminated all PrimeReact Message component CSS overrides that were causing display issues
+- **Simplified Styling**: Used direct Tailwind classes instead of complex CSS overrides
+- **Better Component Structure**: Improved component hierarchy and styling approach
+- **Image Optimization**: Added proper Next.js Image component usage for KAI logos
+
+### 🎯 Visual Enhancements
+
+- **KAI Branding**: Integrated KAI logo throughout the interface for consistent branding
+- **Message Layout**: Improved message layout with proper spacing and visual hierarchy
+- **Input Styling**: Enhanced input field with better padding and visual feedback
+- **Subtle Animations**: Reduced animation intensity for better user experience
+
+### 🎯 QuestionsLeft Component Extraction
+
+- **New Component**: Created dedicated `QuestionsLeft` component with proper TypeScript interface
+- **Better Styling**: Improved spacing using PrimeFlex classes (`gap-2`, `align-items-center`)
+- **Enhanced Padding**: Increased horizontal padding (`px-6`) for better visual balance
+- **Subtle Positioning**: Moved to bottom of chat container with 50% opacity for subtlety
+- **Clean Architecture**: Extracted reusable component with single responsibility
+
+### 🧹 Major CSS Cleanup & PrimeReact Integration
+
+- **Removed All Leftover Next.js Styles**: Completely cleaned up global CSS, removing all leftover styles from npx setup
+- **Background Fix**: Removed body background override that was preventing the KAI background image from showing
+- **PrimeReact Component Integration**: Now using proper PrimeReact components (Card, Button, InputText) throughout
+- **Removed Hard-Coded Borders**: Eliminated all hard-coded border colors and styles, letting PrimeReact theme handle styling
+- **Subtle Styling**: Reduced border contrast and made all corners slightly rounded (rounded-lg instead of rounded-2xl)
+- **Less Boxy Design**: Replaced harsh borders and shadows with subtle, elegant styling
+
+### 🎨 UI Refinements
+
+- **Chat Container**: Now uses PrimeReact Card component with subtle rounded corners
+- **Input Container**: Uses PrimeReact Card with proper theming
+- **Message Bubbles**: Simplified styling with subtle backgrounds and rounded corners
+- **Loading States**: Cleaner loading indicators with reduced opacity
+- **Error Messages**: Streamlined error display without harsh borders
+- **Usage Counter**: Simplified styling with subtle background
+
+### 🔧 Technical Improvements
+
+- **CSS Architecture**: Removed all custom CSS variables and complex overrides
+- **PrimeReact Theming**: Let PrimeReact handle all component styling and theming
+- **Performance**: Reduced CSS complexity for better performance
+- **Maintainability**: Much cleaner codebase with fewer custom styles
+
+### 🎯 Visual Enhancements
+
+- **Consistent Theming**: All components now follow PrimeReact's Lara Dark Teal theme
+- **Subtle Effects**: Reduced visual noise with softer shadows and backgrounds
+- **Better Contrast**: Improved readability while maintaining elegant design
+- **Professional Look**: More polished and professional appearance
+
 ## [0.1.0] - 2024-12-19
 
 ### ✨ Initial Release
